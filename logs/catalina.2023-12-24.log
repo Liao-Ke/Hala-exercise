@@ -1,0 +1,40 @@
+24-Dec-2023 15:01:13.501 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Server.服务器版本: Apache Tomcat/8.5.95
+24-Dec-2023 15:01:13.504 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器构建:        Oct 12 2023 00:55:53 UTC
+24-Dec-2023 15:01:13.505 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 服务器版本号:      8.5.95.0
+24-Dec-2023 15:01:13.505 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 操作系统名称:      Windows 11
+24-Dec-2023 15:01:13.505 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log OS.版本:           10.0
+24-Dec-2023 15:01:13.505 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 架构:              amd64
+24-Dec-2023 15:01:13.505 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java 环境变量:     D:\Java\JDK\corretto-1.8.0_392\jre
+24-Dec-2023 15:01:13.505 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log Java虚拟机版本:    1.8.0_392-b08
+24-Dec-2023 15:01:13.505 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM.供应商:        Amazon.com Inc.
+24-Dec-2023 15:01:13.507 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     D:\Java\Project\exercise
+24-Dec-2023 15:01:13.507 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     D:\TomCat\bin
+24-Dec-2023 15:01:13.508 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.home=D:\TomCat\bin
+24-Dec-2023 15:01:13.508 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dcatalina.base=D:\Java\Project\exercise
+24-Dec-2023 15:01:13.508 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.io.tmpdir=D:\Java\Project\exercise\temp
+24-Dec-2023 15:01:13.508 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.config.file=D:\Java\Project\exercise\conf\logging.properties
+24-Dec-2023 15:01:13.508 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Dec-2023 15:01:13.508 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -javaagent:D:\IDEA\IntelliJ IDEA Community Edition 2023.2.3\lib\idea_rt.jar=51689:D:\IDEA\IntelliJ IDEA Community Edition 2023.2.3\bin
+24-Dec-2023 15:01:13.508 信息 [main] org.apache.catalina.startup.VersionLoggerListener.log 命令行参数：       -Dfile.encoding=UTF-8
+24-Dec-2023 15:01:13.508 信息 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent 在java.library.path:[D:\Java\JDK\corretto-1.8.0_392\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Anaconda\bin;D:\Anaconda\bin\Scripts;D:\Node.js\;D:\Node.js\node_global;C:\Program Files\dotnet\;D:\Go\bin\bin;C:\Users\c1824\AppData\Local\Microsoft\WindowsApps;D:\Bandzip\;D:\VSCode\Microsoft VS Code\bin;C:\Users\c1824\AppData\Roaming\npm;D:\PyCharm\PyCharm Community Edition 2023.2.3\bin;;D:\IDEA\IntelliJ IDEA Community Edition 2023.2.3\bin;;D:\CLion\CLion 2023.2.2\bin;;D:\Go\Project\bin;.]上找不到基于APR的Apache Tomcat本机库，该库允许在生产环境中获得最佳性能
+24-Dec-2023 15:01:13.602 信息 [main] org.apache.coyote.AbstractProtocol.init 初始化协议处理器 ["http-nio-8082"]
+24-Dec-2023 15:01:13.617 信息 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 514 ms
+24-Dec-2023 15:01:13.689 信息 [main] org.apache.catalina.core.StandardService.startInternal 正在启动服务[Catalina]
+24-Dec-2023 15:01:13.689 信息 [main] org.apache.catalina.core.StandardEngine.startInternal 正在启动 Servlet 引擎：[Apache Tomcat/8.5.95]
+24-Dec-2023 15:01:13.697 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor 正在部署部署描述符[D:\Java\Project\exercise\conf\Catalina\localhost\ROOT.xml]。
+24-Dec-2023 15:01:16.991 信息 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 至少有一个JAR被扫描用于TLD但尚未包含TLD。 为此记录器启用调试日志记录，以获取已扫描但未在其中找到TLD的完整JAR列表。 在扫描期间跳过不需要的JAR可以缩短启动时间和JSP编译时间。
+24-Dec-2023 15:01:17.190 信息 [localhost-startStop-1] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Dec-2023 15:01:18.879 信息 [localhost-startStop-1] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 1689 ms
+24-Dec-2023 15:01:19.177 警告 [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom 使用[SHA1PRNG]创建会话ID生成的SecureRandom实例花费了[294]毫秒。
+24-Dec-2023 15:01:19.181 信息 [localhost-startStop-1] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'dispatcher'
+24-Dec-2023 15:01:20.516 信息 [localhost-startStop-1] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1335 ms
+24-Dec-2023 15:01:20.529 信息 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor 部署描述符[D:\Java\Project\exercise\conf\Catalina\localhost\ROOT.xml]的部署已在[6,832]ms内完成
+24-Dec-2023 15:01:20.531 信息 [main] org.apache.coyote.AbstractProtocol.start 开始协议处理句柄["http-nio-8082"]
+24-Dec-2023 15:01:20.546 信息 [main] org.apache.catalina.startup.Catalina.start Server startup in 6929 ms
+24-Dec-2023 15:01:36.394 警告 [http-nio-8082-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /favicon.ico
+24-Dec-2023 15:10:02.896 警告 [http-nio-8082-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /favicon.ico
+24-Dec-2023 16:04:18.779 信息 [Thread-2] org.apache.coyote.AbstractProtocol.pause 暂停ProtocolHandler["http-nio-8082"]
+24-Dec-2023 16:04:19.089 信息 [Thread-2] org.apache.catalina.core.StandardService.stopInternal 正在停止服务[Catalina]
+24-Dec-2023 16:04:19.104 信息 [localhost-startStop-2] com.alibaba.druid.support.logging.JakartaCommonsLoggingImpl.info {dataSource-0} closing ...
+24-Dec-2023 16:04:19.118 信息 [Thread-2] org.apache.coyote.AbstractProtocol.stop 正在停止ProtocolHandler ["http-nio-8082"]
+24-Dec-2023 16:04:19.130 信息 [Thread-2] org.apache.coyote.AbstractProtocol.destroy 正在摧毁协议处理器 ["http-nio-8082"]
