@@ -17,10 +17,16 @@ public class StoreController {
     private StoreService storeService;
     @RequestMapping("/getstore")
     public Result getStore(){
-        List<Store> stores = storeService.getStore();
-        if (stores!=null){
-            return new Result(true,"获取成功",stores);
+        try {
+            List<Store> stores = storeService.getStore();
+            if (stores!=null){
+                return new Result(true,"获取成功",stores);
+            }
+            return new Result(false,"获取失败");
+        }catch (Exception e){
+            e.printStackTrace();
+            return new Result(false, "系统错误", e);
         }
-        return new Result(false,"获取失败");
+
     }
 }

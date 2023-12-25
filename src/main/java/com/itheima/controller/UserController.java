@@ -58,6 +58,7 @@ public class UserController {
             }
             return new Result(false, "登录失败");
         } catch (Exception e) {
+            e.printStackTrace();
             return new Result(false, "系统错误", e);
         }
 
