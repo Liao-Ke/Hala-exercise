@@ -54,7 +54,7 @@ public class UserController {
         try {
             User u = userService.login(user);
             if (u != null) {
-                return new Result(true, "登录成功");
+                return new Result(true, "登录成功",u.getRole());
             }
             return new Result(false, "登录失败");
         } catch (Exception e) {
