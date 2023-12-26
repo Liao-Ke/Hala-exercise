@@ -5,6 +5,7 @@ import com.itheima.service.StoreService;
 import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -12,6 +13,7 @@ import java.util.List;
 
 @Controller
 @ResponseBody
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class StoreController {
     @Autowired
     private StoreService storeService;
