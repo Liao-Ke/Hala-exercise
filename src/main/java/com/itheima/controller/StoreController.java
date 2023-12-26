@@ -15,12 +15,12 @@ import java.util.List;
 public class StoreController {
     @Autowired
     private StoreService storeService;
-    @RequestMapping("/getstore")
+    @RequestMapping("/getStore")
     public Result getStore(){
         try {
             List<Store> stores = storeService.getStore();
             if (stores!=null){
-                return new Result(true,"获取成功",stores);
+                return new Result(true,"获取成功", stores);
             }
             return new Result(false,"获取失败");
         }catch (Exception e){
