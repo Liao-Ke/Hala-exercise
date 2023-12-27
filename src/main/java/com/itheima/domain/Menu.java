@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Menu {
     private String storeName;
+    private String storeDescription;
     private List<Food> foodMenu;
 
     public String getStoreName() {
@@ -20,5 +21,13 @@ public class Menu {
 
     public void setFoodMenu(List<Food> foodMenu) {
         this.foodMenu = foodMenu;
+    }
+
+    public String getStoreDescription() {
+        return storeDescription;
+    }
+
+    public void setStoreDescription(String storeDescription) {
+        this.storeDescription = storeDescription;
     }
 }
