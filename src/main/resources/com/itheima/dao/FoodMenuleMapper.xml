@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.dao.FoodMapper">
+    <select id="getFoodMenu" parameterType="Integer" resultMap="MenuResult">
+        SELECT food.*, store.store_title FROM food JOIN store ON food.store_id=store.store_id WHERE food.store_id=#{store_id}
+    </select>
+    <resultMap id="MenuResult" type="Menu" >
+        <result property="storeName" column="store_title"/>
+        <collection property="foodMenu" ofType="Food">
+            <id property="id" column="food_id"/>
+            <result property="storeID" column="store_id"/>
+            <result property="title"    column="food_title"/>
+            <result property="description" column="food_des"/>
+            <result property="imageUrl" column="food_imgurl"/>
+            <result property="price" column="food_price"/>
+        </collection>
+    </resultMap>
+</mapper>

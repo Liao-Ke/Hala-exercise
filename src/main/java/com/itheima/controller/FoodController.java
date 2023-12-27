@@ -1,6 +1,7 @@
 package com.itheima.controller;
 
-import com.itheima.domain.Food;
+
+import com.itheima.domain.Menu;
 import com.itheima.service.FoodService;
 import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
+
 
 @Controller
 @ResponseBody
@@ -21,7 +22,7 @@ public class FoodController {
     @RequestMapping("/getFoodMenu")
     public Result getFoodMenu(int storeID) {
         try {
-            List<Food> foodMenu = foodService.getFoodMenu(storeID);
+            Menu foodMenu = foodService.getFoodMenu(storeID);
             if(foodMenu!=null) {
                 return  new Result(true,"获取成功", foodMenu);
             }

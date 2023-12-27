@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-public class StoreServiceimpl implements StoreService {
+public class StoreServiceImpl implements StoreService {
     @Autowired
     private StoreMapper storeMapper;
     @Override

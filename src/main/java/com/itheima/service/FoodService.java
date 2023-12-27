@@ -1,9 +1,7 @@
 package com.itheima.service;
 
-import com.itheima.domain.Food;
-
-import java.util.List;
+import com.itheima.domain.Menu;
 
 public interface FoodService {
-    List<Food> getFoodMenu(int storeID);
+    Menu getFoodMenu(int storeID);
 }
