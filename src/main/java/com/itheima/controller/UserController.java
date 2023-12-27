@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 用户登录和注销Controller
@@ -54,7 +56,9 @@ public class UserController {
         try {
             User u = userService.login(user);
             if (u != null) {
-                return new Result(true, "登录成功",u.getRole());
+                Map<String, String> uRole = new HashMap<>();
+                uRole.put("userRole",u.getRole());
+                return new Result(true, "登录成功",uRole);
             }
             return new Result(false, "登录失败");
         } catch (Exception e) {
