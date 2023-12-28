@@ -11,19 +11,21 @@ import java.util.List;
 
 public interface StoreMapper {
     @Select("select * from store")
-    @Results(id = "storeMap",value = {
+    @Results(id = "storeMap", value = {
             //id字段默认为false，表示不是主键
             //column表示数据库表字段，property表示实体类属性名。
-            @Result(id = true,column = "store_id",property = "id"),
-            @Result(column = "user_id",property = "userID"),
-            @Result(column = "store_title",property = "title"),
-            @Result(column = "store_des",property = "description"),
-            @Result(column = "store_imgurl",property = "imageUrl")
+            @Result(id = true, column = "store_id", property = "id"),
+            @Result(column = "user_id", property = "userID"),
+            @Result(column = "store_title", property = "title"),
+            @Result(column = "store_des", property = "description"),
+            @Result(column = "store_imgurl", property = "imageUrl")
     })
     List<Store> getStore();
 
 
     @Select("select * from store where user_id=#{user_id}")
-    @ResultMap(value= "storeMap")
+    @ResultMap(value = "storeMap")
     List<Store> getStoreByUserId(int userID);
+
+    int deleteStoreByID(int storeID);
 }

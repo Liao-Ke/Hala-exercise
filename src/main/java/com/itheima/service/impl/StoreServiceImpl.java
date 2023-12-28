@@ -20,4 +20,9 @@ public class StoreServiceImpl implements StoreService {
     public List<Store> getStoreByUserId(int userID) {
         return storeMapper.getStoreByUserId(userID);
     }
+
+    @Override
+    public int deleteStoreByID(int storeID) {
+        return storeMapper.deleteStoreByID(storeID);
+    }
 }

@@ -18,4 +18,8 @@
             <result property="price" column="food_price"/>
         </collection>
     </resultMap>
+
+    <delete id="deleteFoodMenuByStoreID" parameterType="Integer">
+        DELETE FROM food WHERE store_id = #{store_id};
+    </delete>
 </mapper>

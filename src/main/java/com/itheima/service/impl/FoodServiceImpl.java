@@ -15,4 +15,11 @@ public class FoodServiceImpl implements FoodService {
     public Menu getFoodMenu(int storeID) {
         return foodMapper.getFoodMenu(storeID);
     }
+
+    @Override
+    public int deleteFoodMenuByStoreID(int storeID) {
+        return foodMapper.deleteFoodMenuByStoreID(storeID);
+    }
+
+
 }
