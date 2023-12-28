@@ -8,4 +8,20 @@
     <delete id="deleteStoreByID" parameterType="Integer">
         DELETE FROM store WHERE store_id = #{store_id};
     </delete>
+
+    <update id="updateStore" parameterType="com.itheima.domain.Store">
+        update store
+        <set>
+            <if test="title != null and title!=''">
+                store_title=#{title},
+            </if>
+            <if test="description != null and description!=''">
+                    store_des=#{description},
+            </if>
+            <if test="imageUrl != null and image_url!=''">
+                    store_imgurl=#{imageUrl},
+            </if>
+        </set>
+        where store_id = #{id}
+    </update>
 </mapper>

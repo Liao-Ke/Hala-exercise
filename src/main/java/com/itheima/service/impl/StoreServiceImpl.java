@@ -25,4 +25,11 @@ public class StoreServiceImpl implements StoreService {
     public int deleteStoreByID(int storeID) {
         return storeMapper.deleteStoreByID(storeID);
     }
+
+    @Override
+    public int updateStore(Store store) {
+        return storeMapper.updateStore(store);
+    }
+
+
 }

@@ -10,4 +10,6 @@ public interface StoreService {
     List<Store> getStoreByUserId(int userID);
 
     int deleteStoreByID(int storeID);
+
+    int updateStore(Store store);
 }

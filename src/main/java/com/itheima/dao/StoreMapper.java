@@ -28,4 +28,6 @@ public interface StoreMapper {
     List<Store> getStoreByUserId(int userID);
 
     int deleteStoreByID(int storeID);
+
+    int updateStore(Store store);
 }

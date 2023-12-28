@@ -68,4 +68,18 @@ public class StoreController {
             return new Result(false, "系统错误", e);
         }
     }
+
+    @RequestMapping("/updateStore")
+    public Result updateStore(Store store){
+        try {
+            int count = storeService.updateStore(store);
+            if (count > 0) {
+                return new Result(true, "更新成功");
+            }
+            return new Result(false, "更新失败");
+        }catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "系统错误", e);
+        }
+    }
 }
