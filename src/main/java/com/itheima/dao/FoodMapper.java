@@ -8,4 +8,6 @@ public interface FoodMapper {
     Menu getFoodMenu(int storeID);
 
     int deleteFoodMenuByStoreID(int storeID);
+
+    int deleteFoodByID(int foodID);
 }

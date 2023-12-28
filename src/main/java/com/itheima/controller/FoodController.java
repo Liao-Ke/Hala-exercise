@@ -32,4 +32,18 @@ public class FoodController {
             return new Result(false, "系统错误", e);
         }
     }
+
+    @RequestMapping("/deleteFoodByID")
+    public Result deleteFoodByID(int foodID) {
+        try {
+            int count = foodService.deleteFoodByID(foodID);
+            if (count > 0) {
+                return new Result(true, "删除成功");
+            }
+            return new Result(false, "删除失败");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "系统错误", e);
+        }
+    }
 }

@@ -21,5 +21,10 @@ public class FoodServiceImpl implements FoodService {
         return foodMapper.deleteFoodMenuByStoreID(storeID);
     }
 
+    @Override
+    public int deleteFoodByID(int foodID) {
+        return foodMapper.deleteFoodByID(foodID);
+    }
+
 
 }
