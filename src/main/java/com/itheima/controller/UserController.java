@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -56,9 +58,12 @@ public class UserController {
         try {
             User u = userService.login(user);
             if (u != null) {
-                Map<String, String> uRole = new HashMap<>();
-                uRole.put("userRole",u.getRole());
-                return new Result(true, "登录成功",uRole);
+                Map<String, String> uData = new HashMap<>();
+
+                uData.put("userID", String.valueOf(u.getId()));
+                uData.put("userRole", u.getRole());
+
+                return new Result(true, "登录成功", uData);
             }
             return new Result(false, "登录失败");
         } catch (Exception e) {
