@@ -3,6 +3,7 @@ package com.itheima.dao;
 
 import com.itheima.domain.Store;
 import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 
@@ -20,4 +21,9 @@ public interface StoreMapper {
             @Result(column = "store_imgurl",property = "imageUrl")
     })
     List<Store> getStore();
+
+
+    @Select("select * from store where user_id=#{user_id}")
+    @ResultMap(value= "storeMap")
+    List<Store> getStoreByUserId(int userID);
 }

@@ -30,4 +30,18 @@ public class StoreController {
             return new Result(false, "系统错误", e);
         }
     }
+
+    @RequestMapping("/getStoreByUserID")
+    public Result getStoreByUserId(int userID){
+        try {
+            List<Store> stores = storeService.getStoreByUserId(userID);
+            if (stores!=null){
+                return new Result(true,"获取成功", stores);
+            }
+            return new Result(false,"获取失败");
+        }catch (Exception e){
+            e.printStackTrace();
+            return new Result(false, "系统错误", e);
+        }
+    }
 }

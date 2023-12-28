@@ -15,4 +15,9 @@ public class StoreServiceImpl implements StoreService {
     public List<Store> getStore() {
         return storeMapper.getStore();
     }
+
+    @Override
+    public List<Store> getStoreByUserId(int userID) {
+        return storeMapper.getStoreByUserId(userID);
+    }
 }
