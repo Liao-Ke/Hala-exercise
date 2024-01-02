@@ -15,4 +15,6 @@ public interface StoreService {
 
     Store getStoreById(int storeID);
 
+    int addStore(Store store);
+
 }

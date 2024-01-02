@@ -34,4 +34,6 @@ public interface StoreMapper {
     int deleteStoreByID(int storeID);
 
     int updateStore(Store store);
+
+    int addStore(Store store);
 }

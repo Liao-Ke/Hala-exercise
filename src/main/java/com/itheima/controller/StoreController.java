@@ -70,14 +70,14 @@ public class StoreController {
     }
 
     @RequestMapping("/updateStore")
-    public Result updateStore(Store store){
+    public Result updateStore(Store store) {
         try {
             int count = storeService.updateStore(store);
             if (count > 0) {
                 return new Result(true, "更新成功");
             }
             return new Result(false, "更新失败");
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, "系统错误", e);
         }
@@ -86,11 +86,25 @@ public class StoreController {
     @RequestMapping("/getStoreById")
     public Result getStoreById(int storeID) {
         try {
-            Store store= storeService.getStoreById(storeID);
+            Store store = storeService.getStoreById(storeID);
             if (store != null) {
                 return new Result(true, "获取成功", store);
             }
             return new Result(false, "获取失败");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "系统错误", e);
+        }
+    }
+
+    @RequestMapping("addStore")
+    public Result addStore(Store store) {
+        try {
+            int count = storeService.addStore(store);
+            if (count == 1) {
+                return new Result(true, "添加成功");
+            }
+            return new Result(false, "添加失败", count);
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, "系统错误", e);

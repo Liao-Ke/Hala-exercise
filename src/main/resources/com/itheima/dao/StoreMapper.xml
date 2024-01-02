@@ -24,7 +24,10 @@
         </set>
         where store_id = #{id}
     </update>
-<!--    <insert id="addStore" parameterType="com.itheima.domain.Store">-->
-
-<!--    </insert>-->
+    <insert id="addStore" parameterType="com.itheima.domain.Store">
+        <selectKey keyProperty="id" resultType="Integer" order="BEFORE">
+            SELECT IF(MAX(store_id) IS NULL,1,MAX(store_id)+1) as newId FROM store
+        </selectKey>
+        INSERT INTO store VALUES(#{id},#{userID},#{title},#{description},#{imageUrl})
+    </insert>
 </mapper>
