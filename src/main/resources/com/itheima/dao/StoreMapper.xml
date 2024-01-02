@@ -18,7 +18,7 @@
             <if test="description != null and description!=''">
                     store_des=#{description},
             </if>
-            <if test="imageUrl != null and image_url!=''">
+            <if test="imageUrl != null and imageUrl!=''">
                     store_imgurl=#{imageUrl},
             </if>
         </set>
