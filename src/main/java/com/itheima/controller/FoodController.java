@@ -60,4 +60,18 @@ public class FoodController {
             return new Result(false, "系统错误", e);
         }
     }
+
+    @RequestMapping("/getFoodByID")
+    public Result getFoodByID(int foodID) {
+        try {
+            Food food = foodService.getFoodByID(foodID);
+            if (food!= null) {
+                return new Result(true, "获取成功", food);
+            }
+            return new Result(false, "获取失败");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "系统错误", e);
+        }
+    }
 }

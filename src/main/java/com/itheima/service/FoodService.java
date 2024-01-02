@@ -11,4 +11,6 @@ public interface FoodService {
     int deleteFoodByID(int foodID);
 
     int updateFood(Food food);
+    Food getFoodByID(int foodID);
+
 }

@@ -24,4 +24,7 @@
         </set>
         where store_id = #{id}
     </update>
+<!--    <insert id="addStore" parameterType="com.itheima.domain.Store">-->
+
+<!--    </insert>-->
 </mapper>

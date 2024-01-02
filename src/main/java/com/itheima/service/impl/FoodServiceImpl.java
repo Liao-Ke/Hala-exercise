@@ -32,5 +32,10 @@ public class FoodServiceImpl implements FoodService {
         return foodMapper.updateFood(food);
     }
 
+    @Override
+    public Food getFoodByID(int foodID) {
+        return foodMapper.getFoodByID(foodID);
+    }
+
 
 }
