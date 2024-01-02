@@ -83,7 +83,7 @@ public class FoodController {
             if (count == 1) {
                 return new Result(true, "添加成功");
             }
-            return new Result(false, "添加失败", count);
+            return new Result(false, "添加失败");
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, "系统错误", e);
