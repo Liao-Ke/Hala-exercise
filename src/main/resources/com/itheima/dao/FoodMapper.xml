@@ -7,4 +7,24 @@
     <delete id="deleteFoodByID" parameterType="Integer">
         DELETE FROM food WHERE food_id = #{food_id};
     </delete>
+
+    <update id="updateFood" parameterType="com.itheima.domain.Food">
+        update food
+        <set>
+            <if test="title != null and title!=''">
+                food_title=#{title},
+            </if>
+            <if test="description != null and description!=''">
+                food_des=#{description},
+            </if>
+            <if test="imageUrl != null and imageUrl!=''">
+                food_imgurl=#{imageUrl},
+            </if>
+            <if test="price != null and price!=''">
+                food_price=#{price},
+            </if>
+        </set>
+        where food_id = #{id}
+    </update>
+
 </mapper>
