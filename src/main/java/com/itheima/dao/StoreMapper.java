@@ -27,6 +27,10 @@ public interface StoreMapper {
     @ResultMap(value = "storeMap")
     List<Store> getStoreByUserId(int userID);
 
+    @Select("select * from store where store_id=#{store_id}")
+    @ResultMap(value = "storeMap")
+    Store getStoreById(int storeID);
+
     int deleteStoreByID(int storeID);
 
     int updateStore(Store store);

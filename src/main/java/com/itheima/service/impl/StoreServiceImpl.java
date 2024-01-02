@@ -31,5 +31,10 @@ public class StoreServiceImpl implements StoreService {
         return storeMapper.updateStore(store);
     }
 
+    @Override
+    public Store getStoreById(int storeID) {
+        return storeMapper.getStoreById(storeID);
+    }
+
 
 }

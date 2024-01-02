@@ -82,4 +82,18 @@ public class StoreController {
             return new Result(false, "系统错误", e);
         }
     }
+
+    @RequestMapping("/getStoreById")
+    public Result getStoreById(int storeID) {
+        try {
+            Store store= storeService.getStoreById(storeID);
+            if (store != null) {
+                return new Result(true, "获取成功", store);
+            }
+            return new Result(false, "获取失败");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "系统错误", e);
+        }
+    }
 }

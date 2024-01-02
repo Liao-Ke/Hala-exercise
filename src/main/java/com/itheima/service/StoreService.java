@@ -12,4 +12,7 @@ public interface StoreService {
     int deleteStoreByID(int storeID);
 
     int updateStore(Store store);
+
+    Store getStoreById(int storeID);
+
 }
