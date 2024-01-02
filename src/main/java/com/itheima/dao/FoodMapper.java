@@ -28,4 +28,6 @@ public interface FoodMapper {
             @Result(column = "food_price", property = "price")
     })
     Food getFoodByID(int foodID);
+
+    int addFood(Food food);
 }

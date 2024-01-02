@@ -26,5 +26,10 @@
         </set>
         where food_id = #{id}
     </update>
-
+<insert id="addFood" parameterType="com.itheima.domain.Food">
+    <selectKey keyProperty="id" resultType="Integer" order="BEFORE">
+        SELECT IF(MAX(food_id) IS NULL,1,MAX(food_id)+1) as newId FROM food
+    </selectKey>
+    INSERT INTO food VALUES(#{id},#{storeID},#{title},#{description},#{imageUrl},#{price})
+</insert>
 </mapper>

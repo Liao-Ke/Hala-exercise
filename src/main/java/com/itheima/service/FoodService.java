@@ -13,4 +13,6 @@ public interface FoodService {
     int updateFood(Food food);
     Food getFoodByID(int foodID);
 
+    int addFood(Food food);
+
 }

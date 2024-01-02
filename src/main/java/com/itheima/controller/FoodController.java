@@ -3,6 +3,7 @@ package com.itheima.controller;
 
 import com.itheima.domain.Food;
 import com.itheima.domain.Menu;
+import com.itheima.domain.Store;
 import com.itheima.service.FoodService;
 import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,10 +66,24 @@ public class FoodController {
     public Result getFoodByID(int foodID) {
         try {
             Food food = foodService.getFoodByID(foodID);
-            if (food!= null) {
+            if (food != null) {
                 return new Result(true, "获取成功", food);
             }
             return new Result(false, "获取失败");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "系统错误", e);
+        }
+    }
+
+    @RequestMapping("addFood")
+    public Result addFood(Food food) {
+        try {
+            int count = foodService.addFood(food);
+            if (count == 1) {
+                return new Result(true, "添加成功");
+            }
+            return new Result(false, "添加失败", count);
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, "系统错误", e);
