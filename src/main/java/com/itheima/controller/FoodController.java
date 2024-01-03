@@ -24,10 +24,9 @@ public class FoodController {
     public Result getFoodMenu(int storeID) {
         try {
             Menu foodMenu = foodService.getFoodMenu(storeID);
-            if (foodMenu != null) {
+
                 return new Result(true, "获取成功", foodMenu);
-            }
-            return new Result(false, "获取失败");
+
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, "系统错误", e);
@@ -66,10 +65,8 @@ public class FoodController {
     public Result getFoodByID(int foodID) {
         try {
             Food food = foodService.getFoodByID(foodID);
-            if (food != null) {
+
                 return new Result(true, "获取成功", food);
-            }
-            return new Result(false, "获取失败");
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, "系统错误", e);
