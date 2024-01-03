@@ -1,6 +1,7 @@
 package com.itheima.config;
 
 import com.github.pagehelper.PageInterceptor;
+import org.apache.ibatis.plugin.Interceptor;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
@@ -27,8 +28,10 @@ public class MyBatisConfig {
      */
     @Bean
     public SqlSessionFactoryBean getSqlSessionFactoryBean(
-            @Autowired DataSource dataSource) throws Exception{
+            @Autowired DataSource dataSource,@Autowired PageInterceptor pageIntercptor) throws Exception{
         SqlSessionFactoryBean ssfb = new SqlSessionFactoryBean();
+        Interceptor[] plugins={pageIntercptor};
+        ssfb.setPlugins(plugins);
         //等同于<property name="dataSource" ref="dataSource"/>
         ssfb.setDataSource(dataSource);
         ssfb.setTypeAliasesPackage("com.itheima.domain");
@@ -63,6 +66,7 @@ public class MyBatisConfig {
         PageInterceptor pageIntercptor = new PageInterceptor();
         Properties properties = new Properties();
         properties.setProperty("value", "true");
+        properties.setProperty("reasonable", "true");
         pageIntercptor.setProperties(properties);
         return pageIntercptor;
     }
