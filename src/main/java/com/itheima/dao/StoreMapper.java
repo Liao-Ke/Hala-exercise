@@ -1,6 +1,7 @@
 package com.itheima.dao;
 
 
+import com.github.pagehelper.Page;
 import com.itheima.domain.Store;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.ResultMap;
@@ -20,7 +21,7 @@ public interface StoreMapper {
             @Result(column = "store_des", property = "description"),
             @Result(column = "store_imgurl", property = "imageUrl")
     })
-    List<Store> getStore();
+    Page<Store> getStore();
 
 
     @Select("select * from store where user_id=#{user_id}")

@@ -1,9 +1,12 @@
 package com.itheima.controller;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.itheima.domain.Menu;
 import com.itheima.domain.Store;
 import com.itheima.service.FoodService;
 import com.itheima.service.StoreService;
+import entity.PageResult;
 import entity.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,13 +26,16 @@ public class StoreController {
     private FoodService foodService;
 
     @RequestMapping("/getStore")
-    public Result getStore() {
+    public Result getStore(Integer pageNum,Integer pageSize) {
+        if(pageNum==null) pageNum=1;
+
+        if (pageSize==null) pageSize=5;
         try {
-            List<Store> stores = storeService.getStore();
-            if (stores != null) {
+            PageResult stores = storeService.getStore(pageNum, pageSize);
+
+
                 return new Result(true, "获取成功", stores);
-            }
-            return new Result(false, "获取失败");
+
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, "系统错误", e);
@@ -40,10 +46,9 @@ public class StoreController {
     public Result getStoreByUserId(int userID) {
         try {
             List<Store> stores = storeService.getStoreByUserId(userID);
-            if (stores != null) {
+
                 return new Result(true, "获取成功", stores);
-            }
-            return new Result(false, "获取失败");
+
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, "系统错误", e);
@@ -87,10 +92,8 @@ public class StoreController {
     public Result getStoreById(int storeID) {
         try {
             Store store = storeService.getStoreById(storeID);
-            if (store != null) {
-                return new Result(true, "获取成功", store);
-            }
-            return new Result(false, "获取失败");
+            return new Result(true, "获取成功", store);
+
         } catch (Exception e) {
             e.printStackTrace();
             return new Result(false, "系统错误", e);
