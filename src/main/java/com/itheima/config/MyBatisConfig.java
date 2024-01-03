@@ -1,5 +1,6 @@
 package com.itheima.config;
 
+import com.github.pagehelper.PageInterceptor;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
@@ -15,6 +16,8 @@ import org.springframework.util.ResourceUtils;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
+import java.util.Properties;
+
 public class MyBatisConfig {
     /*
     定义MyBatis的核心连接工厂bean，
@@ -53,6 +56,15 @@ public class MyBatisConfig {
         //等同于<property name="basePackage" value="com.itheima.dao"/>
         msc.setBasePackage("com.itheima.dao");
         return msc;
+    }
+    /**配置PageInterceptor分页插件*/
+    @Bean
+    public PageInterceptor getPageInterceptor() {
+        PageInterceptor pageIntercptor = new PageInterceptor();
+        Properties properties = new Properties();
+        properties.setProperty("value", "true");
+        pageIntercptor.setProperties(properties);
+        return pageIntercptor;
     }
 }
 
