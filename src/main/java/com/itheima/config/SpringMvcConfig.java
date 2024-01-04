@@ -18,6 +18,8 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter{
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("static/**")
                 .addResourceLocations("/static/");
+        registry.addResourceHandler("image/**")
+                .addResourceLocations("/files/");
         super.addResourceHandlers(registry);
     }
     @Bean

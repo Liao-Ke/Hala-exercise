@@ -11,6 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
 
 
 @Controller
@@ -48,7 +54,21 @@ public class FoodController {
     }
 
     @RequestMapping("/updateFood")
-    public Result updateFood(Food food) {
+    public Result updateFood(Food food,MultipartFile imageFile, HttpServletRequest request) {
+        String path = request.getServletContext().getRealPath("/") + "files/";
+        String fileName = UUID.randomUUID() + ".jpg";
+        if (!imageFile.isEmpty() && imageFile!=null) {
+            String fileType = imageFile.getContentType();
+            if (!fileType.equals("image/jpeg") && !fileType.equals("image/png")) return new Result(false, "请上传图片");
+            try {
+                imageFile.transferTo(new File(path+fileName));
+                food.setImageUrl("image/"+fileName);
+            } catch (IOException e) {
+//                throw new RuntimeException(e);
+                return new Result(false, "系统错误", e);
+
+            }
+        }
         try {
             int count = foodService.updateFood(food);
             if (count > 0) {
@@ -74,7 +94,21 @@ public class FoodController {
     }
 
     @RequestMapping("addFood")
-    public Result addFood(Food food) {
+    public Result addFood(Food food, MultipartFile imageFile, HttpServletRequest request) {
+        String path = request.getServletContext().getRealPath("/") + "files/";
+        String fileType = imageFile.getContentType();
+        String fileName = UUID.randomUUID() + ".jpg";
+        if (!fileType.equals("image/jpeg") && !fileType.equals("image/png")) return new Result(false, "请上传图片");
+        if (!imageFile.isEmpty()) {
+            try {
+                imageFile.transferTo(new File(path+fileName));
+                food.setImageUrl("image/"+fileName);
+            } catch (IOException e) {
+//                throw new RuntimeException(e);
+                return new Result(false, "系统错误", e);
+
+            }
+        }
         try {
             int count = foodService.addFood(food);
             if (count == 1) {
