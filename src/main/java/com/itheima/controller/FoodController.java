@@ -93,7 +93,7 @@ public class FoodController {
         }
     }
 
-    @RequestMapping("addFood")
+    @RequestMapping("/addFood")
     public Result addFood(Food food, MultipartFile imageFile, HttpServletRequest request) {
         String path = request.getServletContext().getRealPath("/") + "files/";
         String fileType = imageFile.getContentType();
